@@ -35,7 +35,7 @@ export default async function handler(req, res) {
 
     // 사용자 확인
     if (USERS[username] && USERS[username] === password) {
-      const token = Buffer.from(`${username}:${Date.now()}`).toString('base64');
+      const token = Buffer.from(`${username}:${Date.now()}`, 'utf8').toString('base64');
 
       return res.status(200).json({
         success: true,
