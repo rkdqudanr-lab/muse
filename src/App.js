@@ -280,7 +280,7 @@ export default function SparkSimple() {
         <div className="relative z-10 bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 max-w-md w-full mx-4 border border-purple-100">
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full mb-4">
-              <Zap className="w-8 h-8 text-white" />
+              <music className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-3xl font-black bg-gradient-to-r from-purple-600 via-pink-600 to-pink-600 bg-clip-text text-transparent mb-2">
               MUSE
@@ -363,7 +363,7 @@ export default function SparkSimple() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <Zap className="w-8 h-8 text-purple-600" />
+                <music className="w-8 h-8 text-purple-600" />
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-pink-500 rounded-full animate-ping"></div>
               </div>
               <div>
