@@ -1,15 +1,11 @@
 // api/auth.js
-// 로그인 API
-
 const USERS = {
   'admin': 'muse2025!',
-  '병묵': '뮤지컬!',
-  // 더 추가 가능
+  'test': 'test1234'
 };
 
 export default async function handler(req, res) {
-  // CORS 설정
-  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,POST');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -33,7 +29,6 @@ export default async function handler(req, res) {
       });
     }
 
-    // 사용자 확인
     if (USERS[username] && USERS[username] === password) {
       const token = `${username}-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 

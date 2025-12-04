@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Send, Music, Loader, CheckSquare, Plus, Trash2, Check, LogOut } from 'lucide-react';
 
-export default function SparkSimple() {
+export default function MuseSimple() {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -52,7 +52,7 @@ export default function SparkSimple() {
     if (isLoggedIn) {
       const initialMessage = {
         id: 1,
-        text: `━━━━━━━━━━━━━━━━━━━━\n    ✨ MUSE ✨\n  뮤지컬 추천 가이드\n━━━━━━━━━━━━━━━━━━━━\n\n안녕 ${username}! 나는 MUSE야 🎭\n\n뮤지컬과 뮤지컬 영화를\n사랑하는 너의 가이드!\n\n새로운 작품 만나러 갈까?\n아니면 본 작품 이야기 나눠볼까? 😊`,
+        text: `━━━━━━━━━━━━━━━━━━━━\n    ✨ MUSE ✨\n  뮤지컬 추천 가이드\n━━━━━━━━━━━━━━━━━━━━\n\n안녕 ${username}! 나는 MUSE야 🎭\n\n뮤지컬과 뮤지컬 영화를\n사랑하는 너의 가이드!\n\n새로운 작품 만나러 갈까?\n아니면 본 작품 이야기 나눠볼까?\n\n 😊`,
         sender: 'muse',
         timestamp: new Date()
       };
@@ -226,6 +226,11 @@ export default function SparkSimple() {
 
     setMessages(prev => [...prev, museResponse]);
     setIsLoading(false);
+    
+    // 입력창에 자동 포커스
+    setTimeout(() => {
+      document.querySelector('textarea')?.focus();
+    }, 100);
   };
 
   const handleKeyPress = (e) => {
@@ -280,7 +285,7 @@ export default function SparkSimple() {
         <div className="relative z-10 bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 max-w-md w-full mx-4 border border-purple-100">
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full mb-4">
-              <music className="w-8 h-8 text-white" />
+              <Music className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-3xl font-black bg-gradient-to-r from-purple-600 via-pink-600 to-pink-600 bg-clip-text text-transparent mb-2">
               MUSE
@@ -332,7 +337,7 @@ export default function SparkSimple() {
                   : 'bg-gray-200 text-gray-400 cursor-not-allowed'
               }`}
             >
-              로그인 🚀
+              로그인 🎭
             </button>
           </div>
 
@@ -363,7 +368,7 @@ export default function SparkSimple() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <music className="w-8 h-8 text-purple-600" />
+                <Music className="w-8 h-8 text-purple-600" />
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-pink-500 rounded-full animate-ping"></div>
               </div>
               <div>
@@ -576,7 +581,7 @@ export default function SparkSimple() {
             </button>
           </div>
           <p className="text-center text-xs text-gray-500 mt-2 font-medium">
-            Claude AI가 맞춤 도전과제를 만들어줘요 🚀
+            Claude AI가 맞춤 도전과제를 만들어줘요 🎭
           </p>
         </div>
       </footer>
